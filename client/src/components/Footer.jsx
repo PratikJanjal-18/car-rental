@@ -1,9 +1,15 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const Footer = () => {
   return (
     <footer className="flex flex-col bg-slate-50 items-center justify-around w-full py-16 text-sm text-gray-800/70">
-      <div className="flex items-center gap-8">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex items-center gap-8"
+      >
         <a
           href="#"
           className="font-medium text-gray-500 hover:text-black transition-all"
@@ -34,8 +40,14 @@ const Footer = () => {
         >
           Help
         </a>
-      </div>
-      <div className="flex items-center gap-4 mt-8 text-primary-500">
+      </motion.div>
+
+      <motion.div
+        className="flex items-center gap-4 mt-8 text-primary-500"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <a
           href="#"
           className="hover:-translate-y-0.5 transition-all duration-300"
@@ -150,7 +162,7 @@ const Footer = () => {
             />
           </svg>
         </a>
-      </div>
+      </motion.div>
       <p className="mt-8 text-center">
         Copyright © 2025 <a href="https://prebuiltui.com">PrebuiltUI</a>. All
         rights reservered.
