@@ -36,12 +36,13 @@ const Navbar = () => {
       }`}
     >
       <Link to="/">
-        <motion.img
-          whileHover={{ scale: 1.05 }}
-          src={assets.logo}
+        <motion.p
+          whileHover={{ scale: 1.1 }}
           alt="logo"
-          className="h-8"
-        />
+          className="text-2xl font-extrabold italic text-primary"
+        >
+          DriveEase
+        </motion.p>
       </Link>
 
       <div

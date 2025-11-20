@@ -103,11 +103,11 @@ const Cars = () => {
         className="px-6 md:px-16 lg:px-24 xl:px-32 mt-10"
       >
         <p className="text-gray-500 xl:px-20 max-w-7xl mx-auto">
-          Showing {filteredCars.length} Cars
+          Showing {filteredCars.length - 1} Cars
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto mb-20">
-          {filteredCars.map((car, index) => (
+          {filteredCars.slice(1, 6).map((car, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}

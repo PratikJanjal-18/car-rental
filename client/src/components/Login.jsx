@@ -8,6 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setShowLogin, axios, setToken, navigate } = useAppContext();
+  const [error, setError] = useState("");
 
   const onSubmitHandler = async (event) => {
     try {
@@ -30,6 +31,11 @@ const Login = () => {
     }
   };
 
+  const validate = (value) => {
+    if (value.length < 8) return "Password must be at least 8 characters";
+    return "";
+  };
+
   return (
     <div
       className="fixed top-0 bottom-0 left-0 right-0 z-100 flex items-center text-sm text-gray-600 bg-black/50"
@@ -50,7 +56,7 @@ const Login = () => {
             <input
               onChange={(e) => setName(e.target.value)}
               value={name}
-              placeholder="type here"
+              placeholder="Enter Name"
               className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
               type="text"
               required
@@ -62,7 +68,7 @@ const Login = () => {
           <input
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-            placeholder="type here"
+            placeholder="Enter Email"
             className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500"
             type="email"
             required
@@ -71,13 +77,19 @@ const Login = () => {
         <div className="w-full ">
           <p>Password</p>
           <input
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setError(validate(e.target.value));
+            }}
             value={password}
-            placeholder="type here"
+            placeholder="Password"
             className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary"
             type="password"
             required
           />
+          {password.length > 0 && error && (
+            <p className="text-red-500">{error}</p>
+          )}
         </div>
         {state === "register" ? (
           <p>

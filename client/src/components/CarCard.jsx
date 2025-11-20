@@ -17,7 +17,7 @@ const CarCard = ({ car }) => {
         <img
           src={car.image}
           alt="Car Image"
-          className="w-full h-full object-cover transition-transform duration-500"
+          className="w-100 h-full object-fit transition-transform duration-500"
         />
         {car.isAvailable && (
           <p className="absolute top-4 left-4 bg-primary/90 text-white text-xs px-2.5 py-1 rounded-full">
