@@ -58,10 +58,7 @@ const CarCard = ({ car }) => {
               <img src={assets.car_icon} alt="" className="h-4 mr-2" />
               <span>{car.transmission}</span>
             </div>
-            {/* <div className="flex items-center text-sm text-muted-foreground">
-              <img src={assets.car_icon} alt="" className="h-4 mr-2" />
-              <span>{car.fuel_type}</span>
-            </div> */}
+
             <div className="flex items-center text-sm text-muted-foreground">
               <img src={assets.location_icon} alt="" className="h-4 mr-2" />
               <span>{car.location}</span>
